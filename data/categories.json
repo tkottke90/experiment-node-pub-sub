@@ -1,0 +1,80 @@
+{
+  "lastUpdated": "2021-04-11T00:23:08.292Z",
+  "data": [
+    {
+      "name": "Spending",
+      "value": -15,
+      "updatedAt": "2021-04-11T00:23:08.291Z",
+      "createdAt": "2021-04-11T00:06:53.583Z",
+      "active": true,
+      "id": 1
+    },
+    {
+      "name": "Savings",
+      "value": 0,
+      "updatedAt": "2021-04-11T00:09:29.200Z",
+      "createdAt": "2021-04-11T00:09:29.200Z",
+      "active": true,
+      "id": 2
+    }
+  ],
+  "transactions": [
+    {
+      "action": "create",
+      "timestamp": 1618099613658,
+      "data": {
+        "name": "Spending",
+        "value": 0,
+        "updatedAt": "2021-04-11T00:06:53.582Z",
+        "createdAt": "2021-04-11T00:06:53.583Z",
+        "active": true,
+        "id": 1
+      }
+    },
+    {
+      "action": "patch",
+      "timestamp": 1618099617097,
+      "data": {
+        "category_id": 1,
+        "data": {
+          "value": -5
+        }
+      }
+    },
+    {
+      "action": "patch",
+      "timestamp": 1618099694072,
+      "data": {
+        "category_id": 1,
+        "data": {
+          "value": -5
+        }
+      }
+    },
+    {
+      "action": "create",
+      "timestamp": 1618099769214,
+      "data": {
+        "name": "Savings",
+        "value": 0,
+        "updatedAt": "2021-04-11T00:09:29.200Z",
+        "createdAt": "2021-04-11T00:09:29.200Z",
+        "active": true,
+        "id": 2
+      }
+    },
+    {
+      "action": "patch",
+      "timestamp": 1618100588292,
+      "data": {
+        "category_id": 1,
+        "data": {
+          "value": -5
+        }
+      }
+    }
+  ],
+  "meta": {
+    "nextIndex": 3
+  }
+}

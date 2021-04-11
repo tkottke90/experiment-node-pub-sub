@@ -1,0 +1,70 @@
+{
+  "lastUpdated": "2021-04-11T00:23:08.286Z",
+  "data": [
+    {
+      "timestamp": "1618099617082",
+      "description": "Amazon",
+      "value": -5,
+      "category": 1,
+      "active": true,
+      "id": 1
+    },
+    {
+      "timestamp": "1618099694004",
+      "description": "Amazon",
+      "value": -5,
+      "category": 1,
+      "active": true,
+      "id": 2
+    },
+    {
+      "timestamp": "1618100588248",
+      "description": "Amazon",
+      "value": -5,
+      "category": 1,
+      "active": true,
+      "id": 3
+    }
+  ],
+  "transactions": [
+    {
+      "action": "create",
+      "timestamp": 1618099617095,
+      "data": {
+        "timestamp": "1618099617082",
+        "description": "Amazon",
+        "value": -5,
+        "category": 1,
+        "active": true,
+        "id": 1
+      }
+    },
+    {
+      "action": "create",
+      "timestamp": 1618099694051,
+      "data": {
+        "timestamp": "1618099694004",
+        "description": "Amazon",
+        "value": -5,
+        "category": 1,
+        "active": true,
+        "id": 2
+      }
+    },
+    {
+      "action": "create",
+      "timestamp": 1618100588286,
+      "data": {
+        "timestamp": "1618100588248",
+        "description": "Amazon",
+        "value": -5,
+        "category": 1,
+        "active": true,
+        "id": 3
+      }
+    }
+  ],
+  "meta": {
+    "nextIndex": 4
+  }
+}

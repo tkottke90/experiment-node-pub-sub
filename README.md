@@ -121,4 +121,56 @@ I configured my directories like this:
 ```
 
 The magic sauce that makes this all work is in in the `/classes/pub-sub.js` file.  Which is essentially a wrapper around NodeJS' EventEmitter class:
+```js
+this.emitter = new EventEmitter();
+```
 
+Once we have this configured.  In this project we use a little dependency injection to apply it to each of the models as part of the constructor:
+
+```js
+class MyTransaction {
+  constructor(pubSub) {
+    this.pubSub = pubSub;
+  }
+}
+```
+
+Then we simply need to emit an event to get started.  Here we add an emit call to the `post` method of the class which will trigger whenever we create a transaction:
+```js
+class MyTransaction {
+  ...
+  async post(data) {
+    ...
+
+    this.pubsub.emit('transaction-create', data);
+
+    return data;
+  }
+}
+```
+
+From here the MyTransaction model is done, and does not need to concern itself with any additional tasks and can respond to the client.  Meanwhile in the MyCategories model, we can setup a listener when we instantiate the class:
+```js
+const _ = require('lodash');
+
+class MyCategories {
+  constructor(pubSub) {
+    this.pubsub = pubSub;
+
+    this.pubsub.on('transaction-create', async (data) => {
+      const category = _.get(data, 'category', '');
+      const value = _.get(data, 'value', 0);
+
+      await this.patch(category, { value });
+
+      this._log('debug', 'Updated category', { category, value })
+    })
+
+  }
+```
+
+Here we are listening for that event that will be emitted by the MyTransaction model.  When that event is emitted this callback will be triggered and take care of calling the `patch` method on this class correctly to update the category.
+
+## Conclusion
+
+This was a neat little one day build to learn about how to leverage the EventEmitter class in the future.  
